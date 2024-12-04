@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
+#include<cstdlib>
 using namespace std;
+void clearscreen()
+{
+	system("cls");
+}
 
 // Function is used to check room availability 
 void reserveRoom(bool rooms[], int roomNumber)
@@ -48,6 +53,7 @@ int main()
     cout << "4. Exit\n";
     cout << "Enter your choice: ";
     cin >> choice;
+    clearscreen();
         
     switch (choice) 
 	{
@@ -63,6 +69,7 @@ int main()
     checkAvailability(rooms, roomNumber - 1); 
     }
        break;
+       clearscreen();
                 
    case 2:
         cout << "Enter room number to reserve (1-" << totalRooms << "): ";
@@ -76,6 +83,7 @@ int main()
         }
             break;
                 
+        clearscreen();
     case 3:
         cout << "Enter the number of days for your stay: ";
         cin >> days;
@@ -88,10 +96,12 @@ int main()
         cout << "Your total bill is: $" << calculateBill(days) << endl;
         }
         break;
+        clearscreen();
                 
         case 4:
             cout << "Exiting the system. good bye!"<<endl;
             return 0;
+        clearscreen();
                 
         default:
             cout << "Invalid input! Please choose a valid choice."<<endl;
